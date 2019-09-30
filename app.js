@@ -4,7 +4,12 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import mongoose from 'mongoose';
 
+
+import { collectDefaultMetrics } from 'prom-client'; 
+
 import indexRouter from './src/config/index.routes';
+
+collectDefaultMetrics({ timeout: 5000 });
 
 const app = express();
 
