@@ -7,8 +7,8 @@ router.route('/')
   .get(taskController.getTasks)
   .post(taskController.saveTask)
 
-route.route('/:id')
-  .put()
-  .delete()  
+router.route('/:id')
+  .put(taskController.editTask)
+  .delete(taskController.deleteTask)  
 
 export default router;
